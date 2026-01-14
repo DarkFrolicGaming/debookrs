@@ -15,7 +15,7 @@
 
 	<introduction>
 		<p>
-			In the last section, we explored how rewriting the left-hand side of a differential equation as a single derivative (i.e., <q>completing the product rule</q>) made it easier to solve. But here's the catch: most equations aren't initially set-up for this.
+			In the last section, we explored how rewriting the left-hand side of a differential equation as a single derivative (i.e., <q>completing the product rule</q>) made it easier to solve. But here's the catch: most equations aren't initially set up for this.
 		</p>
 
 		<p>
@@ -33,11 +33,11 @@
 		</p>
 
 		<p>
-			Now, we can reverse product rule on the left, giving us
+			Now we can apply the product rule in reverse on the left, giving us
 			<me>
 				\frac{d}{dx} \left[ e^{2x} y \right] = 5e^{2x}
 			</me>,
-			which is just one integration away from the solution. The function, <m>e^{2x}</m>, that we multiplied onto the equation is known as the <term>integrating factor</term>.
+			which is just one integration away from the solution. The function <m>e^{2x}</m> that we multiplied onto the equation is known as the <term>integrating factor</term>.
 		</p>
 
 		<p>
@@ -63,7 +63,7 @@
 		</p>
 
 		<p>
-			If <m>\mu(x)</m> completes a product rule on the left, then if should match the form <m>fg'+f'g</m>. Setting the labels: <m>g = y</m>, so <m>g' = dy/dx</m>, and looking for functions <m>f</m> and <m>f'</m> that complete the pattern, we match as follows:
+			If <m>\mu(x)</m> completes a product rule on the left, then it should match the form <m>fg'+f'g</m>. Setting the labels: <m>g = y</m>, so <m>g' = dy/dx</m>, and looking for functions <m>f</m> and <m>f'</m> that complete the pattern, we match as follows:
 			<me>
 				\underset{\Large f}{ \underset{\uparrow}{\ul{\mu(x)}}}\
 				\underset{\Large g'}{ \underset{\uparrow}{\ul{\vphantom{|}\frac{dy}{dx}}}} +
@@ -104,7 +104,7 @@
 		</p>
 
 		<p>
-			When selecting an integrating factor, we are free to choose any nonzero value for <m>c</m>. However, we usually choose <m>c = 1</m> to keep things simple, so, our integrating factor is:
+			When selecting an integrating factor, we are free to choose any nonzero value for <m>c</m>. However, we usually choose <m>c = 1</m> to keep things simple, so our integrating factor is:
 			<me>\mu(x) = e^{2x}.</me>
 		</p>
 
@@ -214,7 +214,7 @@
 		</p>
 
 		<p>
-			We'll start with defining the standard form for these equations:
+			We'll start by defining the standard form for these equations:
 		</p>
 
 		<definition xml:id="if-standard-form">
@@ -236,7 +236,7 @@
 
 			<statement>
 				<p>
-					All first-order linear differential equations have a <m>y'</m>, <m>y</m>, and free term. Therefore, they can be written as
+					All first-order linear differential equations have a <m>y'</m> term, a <m>y</m> term, and a free term. Therefore, they can be written as
 					<me>
 						A(x)y' + B(x)y = C(x)
 					</me>.
@@ -333,7 +333,7 @@
 		<title>Try Out the Formula</title>
 
 		<p>
-			With the integrating formula in hand, let's practice finding a few with some examples. Remember, the formula assumes the equation is in <xref ref="if-standard-form" text="custom">standard form</xref>. Once in this form, it is easy to identify <m>P(x)</m> as the coefficient of <m>y</m> and apply it to the formula.
+			With the integrating factor formula in hand, let's practice finding a few with some examples. Remember, the formula assumes the equation is in <xref ref="if-standard-form" text="custom">standard form</xref>. Once in this form, it is easy to identify <m>P(x)</m> as the coefficient of <m>y</m> and apply it to the formula.
 		</p>
 
 		<p>
@@ -432,7 +432,7 @@
 				<title>Integrating Factor Dependence</title>
 				<statement>
 					<p>
-						Suppose you want to compute integrating factor for the differential equation
+						Suppose you want to compute an integrating factor for the differential equation
 						<me>
 							-4\frac{dy}{dx} + 6xy = 15.5
 						</me>.
@@ -616,7 +616,7 @@
 				</statement>
 				<setup>
 					<de-object name="P" context="formula"><de-expression reduce="yes">	1/x	</de-expression></de-object>
-					<de-object name="Q" context="formula"><de-expression reduce="yes">	2+1/x	</de-expression></de-object>
+					<de-object name="Q" context="formula"><de-expression reduce="yes">	-2-1/x	</de-expression></de-object>
 					<de-object name="mu" context="formula"><de-expression reduce="yes">	x	</de-expression></de-object>
 				</setup>
 				<evaluation>
@@ -627,7 +627,7 @@
 								<p>
 									Correct! The equation is rearranged as
 									<me>
-										y' + \frac{1}{x}y = 2 + \frac{1}{x}
+										y' + \frac{1}{x}y = -2 - \frac{1}{x}
 									</me>
 									showing that <m>P(x) = \frac{1}{x}</m>.
 								</p>
@@ -639,7 +639,7 @@
 							<mathcmp obj="Q" />
 							<feedback>
 								<p>
-									Correct! <m>Q(x) = 2 + \frac{1}{x}</m>.
+									Correct! <m>Q(x) = -2 - \frac{1}{x}</m>.
 								</p>
 							</feedback>
 						</test>
@@ -648,12 +648,12 @@
 						<test correct="yes">
 							<mathcmp obj="mu" />
 							<feedback>
-								<p>
-									Correct! The integrating factor is
-									<me>
-										\mu(x) = e^{\large\int \frac{1}{x} dx} = e^{\ln x} = x
-									</me>.
-								</p>
+								<p>								Correct! The integrating factor is
+								<me>
+									\mu(x) = e^{\large\int \frac{1}{x}\, dx} = e^{\ln|x|} = |x|
+								</me>.
+								On the interval x>0, this is x.
+							</p>
 							</feedback>
 						</test>
 					</evaluate>
@@ -724,7 +724,7 @@
 							<mathcmp obj="Q" />
 							<feedback>
 								<p>
-									Incorrect. Double-check your algebra when rearranging the equation.
+									Correct! Q(x) = 2.
 								</p>
 							</feedback>
 						</test>
